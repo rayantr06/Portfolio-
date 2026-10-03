@@ -2,12 +2,16 @@ import { describe, expect, it } from "vitest";
 import { buildProjectSeed } from "@/lib/content/projectsSeed";
 
 describe("buildProjectSeed", () => {
-  it("returns the two expected portfolio projects", () => {
+  it("returns the six approved portfolio projects", () => {
     const projects = buildProjectSeed();
 
-    expect(projects).toHaveLength(2);
+    expect(projects).toHaveLength(6);
     expect(projects.map((project) => project.slug)).toEqual([
-      "ramypulse",
+      "lidal-pulse",
+      "ouiagent",
+      "alerte-ia",
+      "safar",
+      "let-data-dz",
       "gestion-tournoi-golf",
     ]);
   });

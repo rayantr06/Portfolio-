@@ -39,14 +39,14 @@ export default function ProjectDetails({ project }) {
       </div>
 
       <div className="flex flex-wrap gap-4">
-        <a
+        {project.githubUrl ? <a
           href={project.githubUrl}
           target="_blank"
           rel="noreferrer"
           className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-800"
         >
           Ouvrir le depot GitHub
-        </a>
+        </a> : null}
         {project.demoUrl ? (
           <a
             href={project.demoUrl}
@@ -54,7 +54,7 @@ export default function ProjectDetails({ project }) {
             rel="noreferrer"
             className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-700 hover:text-cyan-700"
           >
-            Voir la demo
+            Voir le site public
           </a>
         ) : null}
       </div>

@@ -44,7 +44,7 @@ export default function Hero() {
       <div className="flex flex-col items-center justify-center gap-4 rounded-[2rem] bg-slate-950 p-6 text-white">
         <div className="relative h-72 w-full max-w-xs overflow-hidden rounded-[1.75rem] border border-white/10">
           <Image
-            src="/profile-rayan.jpeg"
+            src="/profile-rayan.png"
             alt="Photo de Rayan Terki"
             fill
             className="object-cover"
@@ -53,8 +53,7 @@ export default function Hero() {
           />
         </div>
         <p className="text-center text-sm leading-7 text-slate-300">
-          Portfolio developpe dans le cadre du cours Next.js avec backend API,
-          routes protegees, formulaires valides et gestion d&apos;etat Redux.
+          Software Developer · Python, C# &amp; TypeScript
         </p>
       </div>
     </section>

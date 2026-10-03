@@ -46,7 +46,7 @@ export default function ProjectsPreview() {
             Projets
           </p>
           <h3 className="text-2xl font-semibold text-slate-950">
-            Deux realisations presentes depuis le backend
+            Contributions au développement logiciel
           </h3>
         </div>
         <Link

@@ -1,172 +1,47 @@
-# Portfolio Next.js - Rayan Terki
+# Rayan Terki — Software Portfolio
 
-Portfolio personnel realise avec `Next.js` dans le cadre du projet de conception demande au college. L'application presente mon profil, mes competences, deux projets, un systeme d'authentification complet et une section de temoignages reliee au backend `Next API`.
+Public presentation of my software development work, built with Next.js 16 and React 19. The English portfolio uses my professional portrait and describes my personal engineering contributions to six collaborative projects.
 
-## Fonctionnalites
+## Public presentation
 
-- page d'accueil protegee avec photo, presentation et competences
-- header avec navigation et footer avec liens GitHub, LinkedIn et email
-- page liste des projets
-- page detail pour chaque projet
-- page `inscription`
-- page `login`
-- page liste des temoignages
-- page ajout de temoignage
-- page modification de temoignage
-- protection des routes avec `proxy.js`
-- validation frontend et backend avec messages en rouge
-- gestion d'etat avec `Redux Toolkit`
-- communication frontend/backend avec `Axios`
+- `/portfolio`: accessible without an account; selected projects, contribution descriptions, technical skills, education and contact links.
+- LIDAL Pulse, OuiAgent, Alerte IA, Safar, Let-Data-DZ and Golf Tournament Management.
+- Alerte IA is described as a research prototype. No emergency-call data or private repository links are included.
+- Responsive layout, keyboard navigation, image alternative text, reduced-motion support and page metadata.
 
-## Projets presentes
+Public content lives in `src/lib/content/profile.js` and `src/lib/content/projectsSeed.js`.
 
-### 1. RamyPulse
-
-Plateforme de veille marketing IA qui collecte, normalise et analyse des signaux clients pour produire des alertes et recommandations actionnables.
-
-Technologies principales :
-- Python
-- FastAPI
-- React
-- SQLite
-- FAISS
-
-Depot :
-- <https://github.com/rayantr06/ramypulse>
-
-### 2. Gestion de tournoi de golf
-
-Application web de gestion de tournois de golf avec inscriptions, equipes, commandites, scores et administration.
-
-Technologies principales :
-- ASP.NET Core MVC
-- Entity Framework Core
-- SQL Server
-- SignalR
-- Bootstrap
-
-Depot :
-- <https://github.com/khenteurhanane/Gestion_Tournoi_Golf_G06>
-
-## Stack technique du portfolio
-
-- `Next.js 16`
-- `React 19`
-- `Redux Toolkit`
-- `Axios`
-- `Sequelize`
-- `SQLite`
-- `bcryptjs`
-- `jsonwebtoken`
-- `jose`
-- `zod`
-- `Tailwind CSS`
-- `Vitest`
-
-## Structure generale
-
-```text
-src/
-  app/
-    (public)/
-      login/
-      inscription/
-    (protected)/
-      projets/
-      temoignages/
-    api/
-      auth/
-      projects/
-      testimonials/
-  components/
-  lib/
-  models/
-  store/
-  validations/
-```
-
-## Installation
-
-1. Cloner le depot
+## Run locally
 
 ```bash
-git clone https://github.com/rayantr06/Portfolio-.git
-cd Portfolio-
-```
-
-2. Installer les dependances
-
-```bash
-npm install
-```
-
-3. Lancer le projet
-
-```bash
+npm ci
 npm run dev
 ```
 
-4. Ouvrir l'application
-
-```text
-http://localhost:3000
-```
-
-## Tests et verification
-
-Lancer les tests :
+Open <http://localhost:3000/portfolio>.
 
 ```bash
 npm test
-```
-
-Verifier le lint :
-
-```bash
 npm run lint
-```
-
-Verifier le build :
-
-```bash
 npm run build
 ```
 
-## Authentification
+## Static public site
 
-Toutes les pages sont protegees sauf :
+```bash
+npm run build:public
+```
 
-- `/login`
-- `/inscription`
+`scripts/export-public.mjs` publishes the prerendered `/portfolio` document into `docs/`, together with its stylesheet, fonts and portrait. It removes framework scripts and uses relative asset paths, so the single-page presentation can be hosted under a repository path on GitHub Pages. Its links are ordinary anchors and external links; no client JavaScript is needed. Review the exporter if adding interactive client components.
 
-Le token JWT est stocke dans un cookie `httpOnly` et verifie via `proxy.js`.
+GitHub Pages source: branch `feat/portfolio`, folder `/docs`. Rebuild and commit the generated files when public content changes.
 
-## Captures d'ecran
+Only the public presentation is hosted statically. The API, database, login and testimonial workflows require the separate Next.js server application.
 
-### Accueil
+## Existing course application
 
-![Capture de la page d'accueil](docs/screenshots/accueil.png)
+The original course application remains in the repository with Redux Toolkit, Axios, Sequelize/SQLite, Zod and Vitest. Its login and registration routes are public. The home page, project routes, testimonial routes and relevant API routes retain their existing proxy authentication checks.
 
-### Connexion
+Redux and authentication bootstrap are scoped to those application layouts; the public portfolio does not request an authentication session. The project seed updates the known project descriptions and migrates the old `ramypulse` slug to `lidal-pulse`, retaining the record identity and other stored projects.
 
-![Capture de la page de connexion](docs/screenshots/login.png)
-
-### Inscription
-
-![Capture de la page d'inscription](docs/screenshots/inscription.png)
-
-### Liste des projets
-
-![Capture de la page des projets](docs/screenshots/projets.png)
-
-### Detail du projet RamyPulse
-
-![Capture de la page detail du projet RamyPulse](docs/screenshots/projet-ramypulse.png)
-
-### Formulaire d'ajout de temoignage
-
-![Capture du formulaire de temoignage](docs/screenshots/temoignage-formulaire.png)
-
-### Liste des temoignages
-
-![Capture de la page des temoignages](docs/screenshots/temoignages.png)
+The authenticated course application needs its own production configuration and security review before a server deployment. The GitHub Pages presentation does not deploy that application.

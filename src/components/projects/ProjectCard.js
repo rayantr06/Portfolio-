@@ -43,14 +43,14 @@ export default function ProjectCard({ project, compact = false }) {
         >
           Voir le detail
         </Link>
-        <a
-          href={project.githubUrl}
+        {project.githubUrl || project.demoUrl ? <a
+          href={project.githubUrl || project.demoUrl}
           target="_blank"
           rel="noreferrer"
           className="text-sm font-medium text-cyan-700 hover:text-cyan-800"
         >
-          GitHub
-        </a>
+          {project.githubUrl ? "GitHub" : "Site public"}
+        </a> : null}
       </div>
     </article>
   );

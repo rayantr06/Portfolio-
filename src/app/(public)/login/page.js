@@ -102,6 +102,11 @@ export default function LoginPage() {
         </button>
       </form>
 
+      <p className="mt-6 text-sm">
+        <Link href="/portfolio" className="font-semibold text-cyan-700 hover:text-cyan-800">
+          Voir le portfolio public de Rayan Terki
+        </Link>
+      </p>
       <p className="mt-6 text-sm text-slate-600">
         Pas encore de compte ?{" "}
         <Link href="/inscription" className="font-semibold text-cyan-700 hover:text-cyan-800">
