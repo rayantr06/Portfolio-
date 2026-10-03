@@ -12,7 +12,7 @@ export const metadata = {
 const visuals = {
   "lidal-pulse": { image: "lidal-pulse-preview", alt: "LIDAL Pulse explorer with simulated test data", note: "Prototype · test data" },
   ouiagent: { image: "ouiagent-preview", alt: "OuiAgent public website", note: "Public website" },
-  "alerte-ia": { image: "alerte-ia-blue", alt: "Alerte IA research prototype illustration: audio becomes structured information", note: "Project illustration" },
+  "alerte-ia": { image: "alerte-ia-demo", alt: "Alerte IA public prototype dashboard with three fictional scenarios", note: "Prototype · fictional data" },
   safar: { image: "safar-interface", alt: "Safar DZ public website with its travel category carousel", note: "Public website" },
   "let-data-dz": { image: "let-data-dz-form", alt: "Let-Data-DZ audio collection form: role and scenario theme selection", note: "Public collection form" },
   "gestion-tournoi-golf": { image: "golf-interface", alt: "FairwayElite golf tournament interface preview from the project repository", note: "Repository UI preview" },
@@ -53,7 +53,7 @@ function Project({ project, index }) {
       <div className={styles.projectBody}>
         <h3>{url ? <ExternalLink href={url}>{project.title}</ExternalLink> : project.title}</h3>
         <p>{descriptions[project.slug]}</p>
-        {project.slug === "alerte-ia" && <p className={styles.prototypeStatus}>Research prototype · Public code forthcoming</p>}
+        {project.slug === "alerte-ia" && <p className={styles.prototypeStatus}>Public research prototype · Fictional demo data</p>}
         <ul className={styles.tags} aria-label={`${project.title} technologies`}>
           {project.technologies.split(", ").map(tech => <li key={tech}>{tech}</li>)}
         </ul>
