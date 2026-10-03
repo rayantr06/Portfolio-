@@ -28,8 +28,16 @@ for (const link of document.querySelectorAll('link[rel="stylesheet"], link[as="f
     }
   }
 }
+const images = new Set();
 for (const image of document.images) {
-  image.src = "./profile-rayan.png";
+  const source = new URL(image.getAttribute("src"), "https://portfolio.local");
+  const imagePath = source.pathname === "/_next/image" ? source.searchParams.get("url") : source.pathname;
+  if (!/^\/(profile-rayan\.png|project-images\/[a-z0-9-]+\.png)$/.test(imagePath ?? "")) {
+    throw new Error(`Unexpected portfolio image: ${imagePath}`);
+  }
+  const relative = imagePath.slice(1);
+  images.add(relative);
+  image.src = `./${relative}`;
   image.removeAttribute("srcset");
   image.removeAttribute("data-nimg");
 }
@@ -40,7 +48,11 @@ for (const asset of assets) {
   await mkdir(path.dirname(destination), { recursive: true });
   await copyFile(path.join(root, ".next/static", asset), destination);
 }
-await copyFile(path.join(root, "public/profile-rayan.png"), path.join(target, "profile-rayan.png"));
+for (const image of images) {
+  const destination = path.join(target, image);
+  await mkdir(path.dirname(destination), { recursive: true });
+  await copyFile(path.join(root, "public", image), destination);
+}
 await writeFile(path.join(target, "index.html"), dom.serialize());
 await writeFile(path.join(target, ".nojekyll"), "");
-console.log(`Public portfolio exported to docs: HTML, portrait and ${assets.size} CSS/font assets.`);
+console.log(`Public portfolio exported to docs: HTML, ${images.size} images and ${assets.size} CSS/font assets.`);
