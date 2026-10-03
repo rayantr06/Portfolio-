@@ -13,9 +13,9 @@ const visuals = {
   "lidal-pulse": { image: "lidal-pulse-preview", alt: "LIDAL Pulse explorer with simulated test data", note: "Prototype · test data" },
   ouiagent: { image: "ouiagent-preview", alt: "OuiAgent public website", note: "Public website" },
   "alerte-ia": { image: "alerte-ia-blue", alt: "Alerte IA research prototype illustration: audio becomes structured information", note: "Project illustration" },
-  safar: { image: "safar", alt: "Travel illustration for Safar", note: "Project illustration" },
-  "let-data-dz": { image: "let-data-dz-preview", alt: "Let-Data-DZ public audio collection form", note: "Public collection form" },
-  "gestion-tournoi-golf": { image: "gestion-tournoi-golf", alt: "Golf tournament management project illustration", note: "Project illustration" },
+  safar: { image: "safar-interface", alt: "Safar DZ public website with its travel category carousel", note: "Public website" },
+  "let-data-dz": { image: "let-data-dz-form", alt: "Let-Data-DZ audio collection form: role and scenario theme selection", note: "Public collection form" },
+  "gestion-tournoi-golf": { image: "golf-interface", alt: "FairwayElite golf tournament interface preview from the project repository", note: "Repository UI preview" },
 };
 
 const descriptions = {
