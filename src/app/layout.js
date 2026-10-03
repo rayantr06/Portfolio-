@@ -1,4 +1,4 @@
-import { Manrope, Playfair_Display } from "next/font/google";
+import { Inter, Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -11,6 +11,8 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+
 export const metadata = {
   title: "Portfolio | Rayan Terki",
   description:
@@ -19,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${manrope.variable} ${playfair.variable}`}>
+    <html lang="fr" className={`${manrope.variable} ${playfair.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
         {children}
       </body>

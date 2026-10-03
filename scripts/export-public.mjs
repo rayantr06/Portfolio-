@@ -53,6 +53,11 @@ for (const image of images) {
   await mkdir(path.dirname(destination), { recursive: true });
   await copyFile(path.join(root, "public", image), destination);
 }
+await copyFile(path.join(root, "public/portfolio-interactions.js"), path.join(target, "portfolio-interactions.js"));
+const interactions = document.createElement("script");
+interactions.src = "./portfolio-interactions.js";
+interactions.defer = true;
+document.body.append(interactions);
 await writeFile(path.join(target, "index.html"), dom.serialize());
 await writeFile(path.join(target, ".nojekyll"), "");
 console.log(`Public portfolio exported to docs: HTML, ${images.size} images and ${assets.size} CSS/font assets.`);

@@ -32,7 +32,7 @@ export function buildProjectSeed() {
       fullDescription: "A collaborative research prototype combining a FastAPI backend and a Next.js/TypeScript frontend. Its operator interface presents transcription and structured incident information.",
       role: "I develop collection and annotation tools, integrate models, and contribute to the operator interface for transcription and structured incident information.",
       technologies: "Python, FastAPI, Next.js, TypeScript, Speech processing",
-      githubUrl: "",
+      githubUrl: "https://github.com/rayantr06/alerte-ia-prototype",
       demoUrl: "",
       imageUrl: "",
     },
