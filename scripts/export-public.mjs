@@ -29,6 +29,11 @@ for (const link of document.querySelectorAll('link[rel="stylesheet"], link[as="f
   }
 }
 const images = new Set();
+const resume = document.querySelector('a[data-resume-link]');
+if (!resume || resume.getAttribute('href') !== '/Rayan-Terki-Resume-EN.pdf') {
+  throw new Error('Expected downloadable résumé link is missing.');
+}
+resume.setAttribute('href', './Rayan-Terki-Resume-EN.pdf');
 for (const image of document.images) {
   const source = new URL(image.getAttribute("src"), "https://portfolio.local");
   const imagePath = source.pathname === "/_next/image" ? source.searchParams.get("url") : source.pathname;
@@ -54,6 +59,7 @@ for (const image of images) {
   await copyFile(path.join(root, "public", image), destination);
 }
 await copyFile(path.join(root, "public/portfolio-interactions.js"), path.join(target, "portfolio-interactions.js"));
+await copyFile(path.join(root, "public/Rayan-Terki-Resume-EN.pdf"), path.join(target, "Rayan-Terki-Resume-EN.pdf"));
 const interactions = document.createElement("script");
 interactions.src = "./portfolio-interactions.js";
 interactions.defer = true;

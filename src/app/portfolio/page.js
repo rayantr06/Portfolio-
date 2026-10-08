@@ -75,6 +75,7 @@ export default function PortfolioPage() {
             <h2>Software Developer</h2>
             <p className={styles.intro}>I build web applications and backend APIs with Python, C# and TypeScript.</p>
             <p className={styles.location}>Based in Canada</p>
+            <a className={styles.resumeLink} href="/Rayan-Terki-Resume-EN.pdf" download="Rayan-Terki-Resume-EN.pdf" data-resume-link>Download résumé (PDF)<Arrow /></a>
             <nav className={styles.nav} aria-label="Page sections">
               {[['about','About'],['work','Projects'],['skills','Skills'],['education','Education'],['contact','Contact']].map(([id,label],i)=><a key={id} href={`#${id}`} aria-current={i===0 ? 'location' : undefined} data-section-link={id}><span className={styles.navLine} /><span>{label}</span></a>)}
             </nav>

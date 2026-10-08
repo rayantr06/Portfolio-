@@ -43,7 +43,7 @@ export function buildProjectSeed() {
       shortDescription: "A collaborative travel and booking platform with client, partner and admin interfaces.",
       fullDescription: "A collaborative travel and booking platform with separate client, partner and admin interfaces.",
       role: "My contributions include authentication routes and fixes to partner booking rendering.",
-      technologies: "Authentication, Booking workflows, Web interfaces",
+      technologies: "Next.js, React, TypeScript, Authentication, Booking workflows",
       githubUrl: "https://github.com/rayantr06/safar",
       demoUrl: "",
       imageUrl: "",

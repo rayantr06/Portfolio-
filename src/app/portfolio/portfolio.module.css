@@ -47,10 +47,11 @@
 .projectBody > .prototypeStatus { color: #94a3b8; font-size: 11px; line-height: 17px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 12px 0 0; list-style: none; }
 .tags li { border-radius: 999px; background: rgba(59,130,246,.13); color: var(--accent); font-size: 12px; line-height: 20px; font-weight: 500; padding: 4px 12px; }
-.moreLink { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; line-height: 24px; font-weight: 500; color: var(--ink); margin-top: 40px; }
-.moreLink svg, .emailLink svg { width: 18px; height: 18px; transition: transform .2s; }
-.moreLink:hover, .emailLink:hover { color: var(--accent); }
-.moreLink:hover svg, .emailLink:hover svg { transform: translate(2px,-2px); }
+.moreLink, .resumeLink { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; line-height: 24px; font-weight: 500; color: var(--ink); margin-top: 40px; }
+.resumeLink { margin-top: 16px; font-size: 14px; }
+.moreLink svg, .resumeLink svg, .emailLink svg { width: 18px; height: 18px; transition: transform .2s; }
+.moreLink:hover, .resumeLink:hover, .emailLink:hover { color: var(--accent); }
+.moreLink:hover svg, .resumeLink:hover svg, .emailLink:hover svg { transform: translate(2px,-2px); }
 .row { display: grid; grid-template-columns: 128px minmax(0,1fr); gap: 24px; padding: 20px 0; }
 .rowLabel { font-size: 12px; font-weight: 600; line-height: 20px; text-transform: uppercase; letter-spacing: .025em; color: #94a3b8; padding-top: 4px; }
 .row .tags { margin: 0; }
