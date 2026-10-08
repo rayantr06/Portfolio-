@@ -37,12 +37,15 @@ export const profile = {
     "pytest",
     "xUnit",
     "Playwright",
+    "Docker",
+    "Azure",
   ],
   skillGroups: [
     { name: "Backend", items: ["Python", "FastAPI", "C#", "ASP.NET Core"] },
     { name: "Frontend", items: ["TypeScript", "JavaScript", "React", "Next.js", "HTML / CSS"] },
     { name: "Data", items: ["SQL", "PostgreSQL", "SQLite", "Entity Framework Core"] },
     { name: "Quality", items: ["pytest", "xUnit", "Playwright", "Integration tests"] },
+    { name: "Tools & Cloud", items: ["Git", "Docker", "Azure"] },
     { name: "Applied AI", items: ["NLP", "Speech processing", "Model integration"] },
   ],
   education: [

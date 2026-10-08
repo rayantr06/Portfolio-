@@ -93,6 +93,7 @@ export default function PortfolioPage() {
               <p>I’m Rayan, a software developer based in Canada. I work with <strong>Python, C# and TypeScript</strong> to build web applications, backend APIs and tools that connect data with everyday workflows.</p>
               <p>My recent work includes <a href="#lidal-pulse">LIDAL Pulse</a>, a marketing intelligence application, and <a href="#ouiagent">OuiAgent</a>, a bilingual security marketplace. I also contribute to <a href="#alerte-ia">Alerte IA</a>, a research prototype for emergency-call transcription and incident information. In these collaborative projects, my role is software development.</p>
               <p>I earned my <strong>Computer Programming diploma at La Cité</strong> after two years of preparatory studies at ESTIN in Béjaïa. I’m interested in backend, full-stack and applied AI development roles in Canada.</p>
+              <p>I’m <strong>authorized to work in Canada</strong> with a valid Post-Graduation Work Permit. I work in <strong>French and English</strong>.</p>
             </div>
           </section>
           <section className={styles.section} id="work" aria-labelledby="work-heading" data-section>
